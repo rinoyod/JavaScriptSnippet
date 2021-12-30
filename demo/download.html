@@ -1,0 +1,38 @@
+<html>
+    <title>download demo</title>
+    <body>
+        <div>
+            ファイル名<br><input type="text" value="sample.txt" id='filename'>
+        </div>
+        <br>
+        <div>
+            内容<br>
+            <textarea id="content">あいうえおabcdefg</textarea>
+        </div>
+        <br>
+        <div>
+            <button id="download">download</button>
+        </div>
+    </body>
+    <script>
+        document.getElementById('download').addEventListener('click', function(e){
+            e.preventDefault();
+            download(document.getElementById('filename').value,
+                    document.getElementById('content').value,
+                    'text/plain');
+
+
+        });
+
+        function download(filename, str, mimeType){
+            const blob = new Blob([str], {"type": mimeType}); 
+            const a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(a.href);
+        }
+    </script>
+</html>

@@ -1,0 +1,42 @@
+<html>
+    <title>getPointerEvetPosition demo</title>
+    <body>
+        <div style="height: 300px; width: 300px; background-color: rgb(132, 190, 190); position: relative;">
+            <div id="point" style="top: 100px; left: 100px; height: 300px; width: 300px; background-color: rgb(211, 184, 35); position: absolute;">
+            ここのマウスカーソルの座標を取得</div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div>
+            <span id="rect"></span>
+        </div>
+    </body>
+    <script>
+        document.getElementById('point').addEventListener('mousemove', function(e){
+            e.preventDefault();
+            const rect = getPointerEvetPosition(e);
+
+            document.getElementById('rect').innerText = 'x=' + rect.x +" , y=" + rect.y;
+
+
+        });
+
+        function getPointerEvetPosition(pointerEvent){
+            const clickX = pointerEvent.pageX;
+            const clickY = pointerEvent.pageY;
+
+            const clientRect = pointerEvent.currentTarget.getBoundingClientRect();
+            const positionX  = clientRect.left + window.pageXOffset;
+            const positionY  = clientRect.top  + window.pageYOffset;
+
+            // 要素内におけるクリック位置を計算
+            const x = clickX - positionX;
+            const y = clickY - positionY;
+
+            return {x:x,y:y}
+        }    
+    </script>
+</html>
