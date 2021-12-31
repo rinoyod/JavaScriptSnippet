@@ -1,0 +1,39 @@
+<html>
+    <title>openLocalFile demo</title>
+    <body>
+        <div>
+            ファイル名<br><input type="text" value="" id='filename'>
+        </div>
+        <br>
+        <div>
+            内容<br>
+            <textarea id="content" cols=40, rows=10></textarea>
+        </div>
+        <br>
+        <div>
+            <button id="open">file open</button>
+        </div>
+    </body>
+    <script>
+        document.getElementById('open').addEventListener('click', async function(e){
+            e.preventDefault();
+
+            const fileHandle = await openLocalFile();
+            const file = await fileHandle.getFile();
+
+            document.getElementById('filename').value = await file.name;
+            document.getElementById('content').value = await file.text();
+
+
+
+        });
+
+        async function openLocalFile(){
+            let fileHandle;
+            [fileHandle] = await window.showOpenFilePicker({multiple: false});
+
+            return fileHandle;
+
+        }
+    </script>
+</html>
