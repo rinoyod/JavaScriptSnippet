@@ -3,7 +3,7 @@
      * @param {PointerEvent} pointerEvent ポインターイベント
      * @returns {{x:number,y:number}}
      */
-     function getPointerEvetPosition(pointerEvent){
+     function getPointerEventPosition(pointerEvent){
         const clickX = pointerEvent.pageX;
         const clickY = pointerEvent.pageY;
 

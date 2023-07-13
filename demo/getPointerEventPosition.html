@@ -1,5 +1,5 @@
 <html>
-    <title>getPointerEvetPosition demo</title>
+    <title>getPointerEventPosition demo</title>
     <body>
         <div style="height: 300px; width: 300px; background-color: rgb(132, 190, 190); position: relative;">
             <div id="point" style="top: 100px; left: 100px; height: 300px; width: 300px; background-color: rgb(211, 184, 35); position: absolute;">
@@ -17,14 +17,14 @@
     <script>
         document.getElementById('point').addEventListener('mousemove', function(e){
             e.preventDefault();
-            const rect = getPointerEvetPosition(e);
+            const rect = getPointerEventPosition(e);
 
             document.getElementById('rect').innerText = 'x=' + rect.x +" , y=" + rect.y;
 
 
         });
 
-        function getPointerEvetPosition(pointerEvent){
+        function getPointerEventPosition(pointerEvent){
             const clickX = pointerEvent.pageX;
             const clickY = pointerEvent.pageY;
 
