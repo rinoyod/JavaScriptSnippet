@@ -1,8 +1,11 @@
+/**
+ * ドラッグ機能の実装クラス
+ */
 class mouseDrag{
 
     /**
-     * ドラッグ機能の実装クラス
-     * @param {HTMLHtmlElement} element 
+     * 
+     * @param {HTMLHtmlElement} element ドラッグしたいエレメント
      */
     constructor(element){
 
@@ -20,18 +23,33 @@ class mouseDrag{
         
     }
 
+    /**
+     * マウスキーを押下時に処理する関数を指定します
+     * @param {Object} callback 
+     */
     onDownEvent(callback){
         this._onDownMethod = callback;
     }
 
+    /**
+     * マウスキーを移動時に処理する関数を指定します
+     * @param {Object} callback 
+     */
     onMoveEvent(callback){
         this._onMoveMethod = callback;
     }
 
+    /**
+     * マウスキーを離れた時に処理する関数を指定します
+     * @param {Object} callback 
+     */
     onUpEvent(callback){
         this._onUpMethod = callback;
     }
 
+    /**
+     * エレメントとのイベントの紐づけを解除します
+     */
     clear(){
         this._element.addEventListener(this._funcDown, false);
     }
