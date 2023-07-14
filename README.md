@@ -15,3 +15,6 @@ clickイベント時などのクリックした座標を求める
 
 ## arrayObjectQuickSort
 オブジェクトの配列のソート
+
+## mouseDrag
+マウスのドラッグ機能クラス
