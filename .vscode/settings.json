@@ -1,0 +1,8 @@
+{
+    "editor.autoIndentOnPaste": false,
+    "workbench.tree.indent": 4,
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": false,
+}

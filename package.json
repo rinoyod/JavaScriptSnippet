@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "init": "^0.1.2"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
+  },
+  "devDependencies": {
+    "msw": "^2.12.10"
+  }
+}
