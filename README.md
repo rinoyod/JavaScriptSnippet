@@ -18,3 +18,6 @@ clickイベント時などのクリックした座標を求める
 
 ## mouseDrag
 マウスのドラッグ機能クラス
+
+## createApi
+fetchAPI のラッパークラス
