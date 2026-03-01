@@ -21,3 +21,6 @@ clickイベント時などのクリックした座標を求める
 
 ## createApi
 fetchAPI のラッパークラス
+
+## QuickVal
+文字列・数値バリデーションクラス
