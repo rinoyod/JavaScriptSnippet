@@ -27,14 +27,19 @@ import QuickVal from "quickval";
 const validator = new QuickVal();
 
 const val = validator
-  .require()
-  .isNumericString()
-  .min(10)
-  .max(100);
+  .require(true, { message: "この項目は必須です。" })
+  .isNumericString({ message: "数値で入力してください。" })
+  .min(10, { message: "10以上の値を入力してください。" })
+  .max(100, { message: "100以下の値を入力してください。" });
 
-const result = val.validate("50");
 
-console.log(result);
+const result = val.validate("150");
+
+//エラー判定＆メッセージ
+if(!result.success){
+	console.log(result.errors[0].message);
+}
+
 ```
 
 ---
