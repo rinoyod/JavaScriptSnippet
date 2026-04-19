@@ -1,13 +1,18 @@
 {
-  "dependencies": {
-    "init": "^0.1.2"
-  },
-  "msw": {
-    "workerDirectory": [
-      "public"
-    ]
-  },
-  "devDependencies": {
-    "msw": "^2.12.10"
-  }
+	"dependencies": {
+		"init": "^0.1.2"
+	},
+	"msw": {
+		"workerDirectory": [
+			"public"
+		]
+	},
+	"devDependencies": {
+		"msw": "^2.12.10",
+		"vitest": "^4.1.4"
+	},
+	"scripts": {
+		"test": "vitest",
+		"test:run": "vitest run"
+	}
 }
